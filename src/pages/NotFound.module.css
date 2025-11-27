@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.errorCode {
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, hsl(var(--chart-1)), hsl(var(--chart-3)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: fadeInScale 0.6s ease-out;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.homeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, hsl(var(--chart-1)), hsl(var(--chart-2)));
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.homeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.homeButton:active {
+  transform: translateY(0);
+}
+
+.decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--chart-1) / 0.1), hsl(var(--chart-3) / 0.1));
+  filter: blur(60px);
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.decorationTop {
+  top: -150px;
+  right: -150px;
+}
+
+.decorationBottom {
+  bottom: -150px;
+  left: -150px;
+  animation-delay: -3s;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .errorCode {
+    font-size: 5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .homeButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
