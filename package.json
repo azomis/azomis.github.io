@@ -19,7 +19,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,8 @@
     ]
   },
   "devDependencies": {
-    "@types/d3": "^7.4.3"
-  }
+    "@types/d3": "^7.4.3",
+    "gh-pages": "^6.3.0"
+  },
+  "homepage": "https://azomis.github.io/d3-chart/"
 }
